@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportConnect Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Chatbot Flotante -->
+    <div class="chatbot-container" id="chatbot">
+        <div class="chatbot-header">
+            <h3>Asistente SportConnect</h3>
+            <button id="close-chatbot"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages">
+            <div class="chatbot-message bot">
+                ¡Hola! Soy tu asistente deportivo. ¿En qué puedo ayudarte?
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbot-user-input" placeholder="Escribe tu pregunta...">
+            <button id="send-message"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+    <button class="chatbot-toggle" id="chatbot-toggle">
+        <i class="fas fa-robot"></i>
+    </button>
+
+    <!-- Modal Login/Signup -->
+    <div class="modal" id="auth-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="auth-forms">
+                <div class="auth-form active" id="login-form">
+                    <h2>Iniciar Sesión</h2>
+                    <form id="login">
+                        <input type="email" placeholder="Correo electrónico" required>
+                        <input type="password" placeholder="Contraseña" required>
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                    </form>
+                    <p>¿No tienes cuenta? <a href="#" id="show-signup">Regístrate</a></p>
+                </div>
+                <div class="auth-form" id="signup-form">
+                    <h2>Registro</h2>
+                    <form id="signup">
+                        <input type="text" placeholder="Nombre completo" required>
+                        <input type="email" placeholder="Correo electrónico" required>
+                        <input type="password" placeholder="Contraseña" required>
+                        <button type="submit" class="btn btn-primary">Registrarse</button>
+                    </form>
+                    <p>¿Ya tienes cuenta? <a href="#" id="show-login">Inicia sesión</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Crear Evento -->
+    <div class="modal" id="event-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Crear Nuevo Evento</h2>
+            <form id="create-event">
+                <input type="text" placeholder="Título del evento" required>
+                <select required>
+                    <option value="">Selecciona un deporte</option>
+                    <option value="futbol">Fútbol</option>
+                    <option value="baloncesto">Baloncesto</option>
+                    <option value="tenis">Tenis</option>
+                    <option value="running">Running</option>
+                    <option value="natacion">Natación</option>
+                </select>
+                <textarea placeholder="Descripción" required></textarea>
+                <input type="datetime-local" required>
+                <input type="text" placeholder="Ubicación" required>
+                <button type="submit" class="btn btn-primary">Publicar Evento</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">SportConnect</div>
+            <button class="menu-mobile"><i class="fas fa-bars"></i></button>
+            <div class="nav-links">
+                <a href="#eventos">Eventos</a>
+                <a href="#mapa">Mapa</a>
+                <a href="#foro">Comunidad</a>
+                <div id="user-auth">
+                    <button class="btn btn-outline" id="login-btn">Iniciar Sesión</button>
+                    <button class="btn btn-primary" id="signup-btn">Registro</button>
+                </div>
+                <div id="user-logged" style="display: none;">
+                    <span id="username-display"></span>
+                    <button class="btn btn-primary" id="create-event-btn">
+                        <i class="fas fa-plus"></i> Evento
+                    </button>
+                    <button class="btn btn-outline" id="logout-btn">Salir</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Hero section rediseñada -->
+<section class="hero">
+    <div class="hero-content">
+      <h1>Conecta a través del deporte</h1>
+      <p class="hero-subtitle">Encuentra compañeros, reserva instalaciones y vive tu pasión</p>
+      <div class="hero-cta">
+        <button class="btn btn-primary btn-lg">
+          <i class="fas fa-calendar-alt"></i> Explorar eventos
+        </button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Tarjeta de evento mejorada -->
+  <article class="evento-card">
+    <div class="evento-badge">Popular</div>
+    <img src="https://images.unsplash.com/photo-1543357480-c60d400e7ef6" alt="Fútbol" class="evento-img">
+    <div class="evento-info">
+      <div class="evento-category">Fútbol 5</div>
+      <h3>Torneo de Verano</h3>
+      <div class="evento-meta">
+        <span><i class="fas fa-map-marker-alt"></i> Polideportivo Central</span>
+        <span><i class="fas fa-clock"></i> Hoy, 18:00</span>
+      </div>
+      <div class="evento-footer">
+        <div class="evento-participants">
+          <div class="avatars">
+            <div class="avatar">A</div>
+            <div class="avatar">B</div>
+            <div class="avatar">+5</div>
+          </div>
+          <span>8 participantes</span>
+        </div>
+        <button class="btn btn-primary">
+          Unirse <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </article>
+
+    <!-- Resto del contenido... (igual que antes) -->
+
+    <script src="app.js"></script>
+</body>
+</html>
